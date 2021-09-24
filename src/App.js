@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import About from './components/About'
+import Home from './components/Home'
+import Footer from './components/Footer'
+import AlertComp from './components/AlertComp'
+import NavbarComp from './components/Navbar'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import NoteState from './contexts/notes/NoteState';
+import Login from './components/Login'
+import Signup from './components/Signup'
+import AuthState from './contexts/auth/AuthState'
+import { AlertState } from './contexts/alerts/AlertContext'
 
-function App() {
+
+
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Router>
+        <AlertState>
+          <AuthState>
+            <NoteState>
+              <NavbarComp />
+              <AlertComp/>
+              <Switch>
+                <Route exact path="/">
+                  <Home />
+                </Route>
+                <Route exact path="/about">
+                  <About />
+                </Route>
+                <Route exact path="/login">
+                  <Login />
+                </Route>
+                <Route exact path="/signup">
+                  <Signup />
+                </Route>
+              </Switch>
+              <Footer />
+            </NoteState>
+          </AuthState>
+        </AlertState>
+      </Router>
+    </>
+  )
 }
 
-export default App;
+export default App
+

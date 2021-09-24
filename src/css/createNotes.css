@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+.border-shadow {
+  box-shadow: 1px 1px 22px rgba(0, 0, 0, 0.418);
+}
+
+.main_note form {
+  display: flex;
+  flex-direction: column;
+}
+.main_note input,
+.main_note textarea {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: none;
+  resize: none;
+  font-weight: bold;
+  font-family: "Baloo Da 2", cursive;
+}
+.main_note textarea {
+  font-weight: 200;
+  font-family: "Gowun Dodum", sans-serif;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+}
+
+.main_note textarea::-webkit-scrollbar {
+  display: none;
+}
+
+.addBtn{
+    justify-content: flex-end;
+
+}
+.buttonAdd {
+  box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.418)!important;
+  height: 3.5rem !important;
+  width: 3.5rem !important;
+  background-color: rgb(255, 174, 0) !important;
+  margin-top: 1rem;
+  z-index: 2;
+  top: 20px;
+  left: 20px;
+}
+.buttonAdd:hover {
+  background-color: rgba(138, 138, 31, 0.795) !important;
+
+}
